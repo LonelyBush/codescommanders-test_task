@@ -1,0 +1,11 @@
+.errorPageContainer{
+    display: flex;
+    height: 50rem;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    & h2 {
+        margin: 0;
+    }
+}

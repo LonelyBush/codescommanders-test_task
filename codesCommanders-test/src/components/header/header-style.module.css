@@ -1,0 +1,11 @@
+@import '../../styles/colors.css';
+
+.headerContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--c-blue-300);
+    color: var(--c-white);
+    padding: 1rem 1.5rem;
+}
