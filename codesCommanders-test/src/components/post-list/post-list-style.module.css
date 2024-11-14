@@ -1,0 +1,56 @@
+@import '../../styles/colors.css';
+
+.postListSection{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.postContainer{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 15rem;
+    gap: 0.8rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    box-shadow: 0 0.04rem 0.04px 0  var(--c-black-opacity-40);
+    background-color: var(--c-white);
+    border: 0.12rem solid var(--c-black-opacity-40);
+    border-radius: 0.3rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.postContainer:hover {
+    background-color: var(--c-blue-300);
+    border: 0.1rem solid var(--c-blue-300);
+    cursor: pointer;
+}
+.postContainer.active{
+    background-color: var(--c-blue-300);
+    border: 0.1rem solid var(--c-blue-300);
+    cursor: pointer;
+}
+.postContainer.pending {
+    box-shadow: 0 0.1rem 0.2rem var(--c-black-opacity-40);
+    cursor: pointer;
+    color: var(--c-white);
+    animation: pending 1s infinite;
+}
+
+.mockImg{
+    width: 100%;
+    background: linear-gradient(70deg, var(--c-blue-100), var(--c-cream-100));
+    height: 8rem;
+}
+
+.postTittle {
+    font-size: 0.9rem;
+}
+
+.postBody{
+    font-size: 0.9rem;
+}
