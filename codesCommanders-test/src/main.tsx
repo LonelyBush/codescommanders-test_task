@@ -9,7 +9,12 @@ import { Provider } from 'react-redux';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={setupStore()}>
-      <RouterProvider router={router} />
+      <RouterProvider
+        future={{
+          v7_startTransition: true,
+        }}
+        router={router}
+      />
     </Provider>
   </StrictMode>,
 );

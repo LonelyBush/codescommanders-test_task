@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { typecodeApi } from './apiReducer';
+import { api } from './api';
+import authStore from './auth-slice';
 
 const rootReducer = combineReducers({
-  [typecodeApi.reducerPath]: typecodeApi.reducer,
+  [api.reducerPath]: api.reducer,
+  auth: authStore,
 });
 
 const setupStore = (preloadedState?: Partial<RootState>) =>
@@ -13,7 +15,7 @@ const setupStore = (preloadedState?: Partial<RootState>) =>
       getDefaultMiddleware({
         immutableCheck: { warnAfter: 128 },
         serializableCheck: { warnAfter: 128 },
-      }).concat(typecodeApi.middleware),
+      }).concat(api.middleware),
   });
 
 export type RootState = ReturnType<typeof rootReducer>;

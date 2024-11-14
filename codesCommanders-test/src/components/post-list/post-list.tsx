@@ -1,4 +1,4 @@
-import { useGetAllPostsQuery } from '../../lib/redux/apiReducer';
+import { useGetAllPostsQuery } from '../../lib/redux/api';
 import style from './post-list-style.module.css';
 
 function PostList() {
