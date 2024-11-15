@@ -11,27 +11,35 @@ function SignIn() {
     const formData = new FormData(e.currentTarget);
     const username = formData.get('username') as string;
     try {
-      await getUser({ username });
-      navigate('/');
+      const user = await getUser({ username });
+
+      if (user.data?.isAuth) {
+        navigate('/');
+      } else {
+        alert('There is now such user!');
+      }
     } catch (error) {
       console.log(error);
     }
   };
   return (
     <div className={style.signInSection}>
-      <form onSubmit={handleSubmit} className={style.formContainer}>
-        <h2>Sign in</h2>
-        <input
-          name="username"
-          className={style.inputStyle}
-          type="text"
-          placeholder="Type your username..."
-        />
-        <button className={style.btnStyle} type="submit">
-          Submit
-        </button>
-        {isLoading ? 'Loading...' : ''}
-      </form>
+      {isLoading ? (
+        'Loading...'
+      ) : (
+        <form onSubmit={handleSubmit} className={style.formContainer}>
+          <h2>Sign in</h2>
+          <input
+            name="username"
+            className={style.inputStyle}
+            type="text"
+            placeholder="Type your username..."
+          />
+          <button className={style.btnStyle} type="submit">
+            Submit
+          </button>
+        </form>
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { AuthResponse, Post, User } from '../../interfaces/api-interface';
+import { Auth, Post, User } from '../../interfaces/api-interface';
 
 export const api = createApi({
   reducerPath: 'api',
@@ -17,11 +17,17 @@ export const api = createApi({
     getUsers: builder.query<User[], void>({
       query: () => '/users',
     }),
-    getUser: builder.mutation<AuthResponse, Partial<User>>({
+    getUser: builder.mutation<Auth, Partial<User>>({
       query: ({ username }) => ({
         url: `users/?username=${username}`,
         method: 'GET',
       }),
+      transformResponse: (response: User[]) => {
+        if (response.length === 0) {
+          return { user: null, isAuth: false };
+        }
+        return { user: response[0], isAuth: true };
+      },
     }),
   }),
 });

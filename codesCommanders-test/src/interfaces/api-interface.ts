@@ -29,6 +29,7 @@ export interface User {
   };
 }
 
-export interface AuthResponse {
-  data: User[];
+export interface Auth {
+  user: User | null;
+  isAuth: boolean;
 }
