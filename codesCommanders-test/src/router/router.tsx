@@ -3,6 +3,7 @@ import Layout from '../pages/layout/layout';
 import ErrorBoundary from '../components/error-boundary/error-boundary';
 import Main from '../pages/main/main';
 import SignIn from '../pages/sign-in/sign-in';
+import Post from '../pages/post/post';
 
 const router = createBrowserRouter(
   [
@@ -19,6 +20,11 @@ const router = createBrowserRouter(
         {
           path: '/sign-in',
           element: <SignIn />,
+          errorElement: <ErrorBoundary />,
+        },
+        {
+          path: '/:postId',
+          element: <Post />,
           errorElement: <ErrorBoundary />,
         },
       ],

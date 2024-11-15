@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useGetAllPostsQuery } from '../../lib/redux/api';
 import style from './post-list-style.module.css';
 
@@ -10,13 +11,17 @@ function PostList() {
         ? 'Loading...'
         : data?.map((post) => {
             return (
-              <div key={post.id} className={style.postContainer}>
+              <Link
+                to={`/${post.id}`}
+                key={post.id}
+                className={style.postContainer}
+              >
                 <div className={style.mockImg} />
-                <h4 className={style.postTitle}>{post.title}</h4>
+                <h5 className={style.postTitle}>{post.title}</h5>
                 <p
                   className={style.postBody}
                 >{`${post.body.split(' ').slice(0, 4).join(' ')}...`}</p>
-              </div>
+              </Link>
             );
           })}
     </div>
