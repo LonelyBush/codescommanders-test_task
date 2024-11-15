@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useGetAllPostsQuery } from '../../lib/redux/api';
 import style from './post-list-style.module.css';
+import ErrorBoundary from '../error-boundary/error-boundary';
 
 function PostList() {
-  const { data, isLoading } = useGetAllPostsQuery();
+  const { data, isLoading, isError } = useGetAllPostsQuery();
+  if (isError) {
+    return <ErrorBoundary />;
+  }
 
   return (
     <div className={style.postListSection}>
