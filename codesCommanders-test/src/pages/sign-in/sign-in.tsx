@@ -16,7 +16,7 @@ function SignIn() {
       if (user.data?.isAuth) {
         navigate('/');
       } else {
-        alert('There is now such user!');
+        alert('There is no such user!');
       }
     } catch (error) {
       console.log(error);
