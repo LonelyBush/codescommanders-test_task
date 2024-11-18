@@ -18,6 +18,7 @@ https://codescommanders-task.netlify.app/
   - clone this repo
   - docker build -t codescommanders-test_task . (to create docker image)
   - docker run -p 3000:80 codescommanders-test_task (to run docker container)
+  - open http://localhost:3000/ in browser
 
 ## Author
 [LonelyBush](https://github.com/LonelyBush)
