@@ -8,13 +8,13 @@ https://codescommanders-task.netlify.app/
 
 ## How to run this app locally on your computer
 
-1. locally through package manager
+1. through npm package manager
   - clone this repo
   - cd codesCommanders-test
   - npm install
   - npm run dev
 
-2. locally using dockerfile
+2. using dockerfile
   - clone this repo
   - docker build -t codescommanders-test_task . (to create docker image)
   - docker run -p 3000:80 codescommanders-test_task (to run docker container)
