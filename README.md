@@ -1,14 +1,24 @@
 # CodesCommanders-test_task
 
-## How to run this app
+## Requirements
+https://auspicious-bumper-c64.notion.site/Frontend-Junior-13bce27d3c5e80daa716c585de4ac003
 
-1. localy throught package manager
-- clone this repo
-- cd codesCommanders-test
-- npm install
-- npm run dev
+## Deploy
+https://codescommanders-task.netlify.app/
 
-2. localy using dockerfile
-- docker build -t codescommanders-test_task . (to create docker image)
-- docker run -p 3000:80 codescommanders-test_task (to run docker container)
+## How to run this app locally on your computer
+
+1. locally through package manager
+  - clone this repo
+  - cd codesCommanders-test
+  - npm install
+  - npm run dev
+
+2. locally using dockerfile
+  - clone this repo
+  - docker build -t codescommanders-test_task . (to create docker image)
+  - docker run -p 3000:80 codescommanders-test_task (to run docker container)
+
+## Author
+[LonelyBush](https://github.com/LonelyBush)
 
